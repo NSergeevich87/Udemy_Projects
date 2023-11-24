@@ -5,7 +5,9 @@ using UnityEngine;
 public class Driver : MonoBehaviour
 {
     [SerializeField] float steerSpeed = 0.1f;
-    [SerializeField] float moveSpeed = 0.01f;
+    [SerializeField] float moveSpeed = 10.0f;
+    [SerializeField] public float slowSpeed = 6.0f;
+    [SerializeField] public float boostSpeed = 15.0f;
 
     void Start()
     {
@@ -20,4 +22,10 @@ public class Driver : MonoBehaviour
         transform.Translate(0, moveAmount, 0);
         transform.Rotate(0, 0, -steerAmount);
     }
+
+    public void SetMoveSpeed(float speed)
+    {
+        moveSpeed = speed;
+    }
+
 }
